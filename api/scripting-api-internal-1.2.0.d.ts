@@ -4379,16 +4379,16 @@ declare class ExtrudeItem extends Vertices2DItem {
     /** @deprecated */ setHeight(value: number): void;
 }
 declare class AnimationMask {
-    static readonly leftArm: Array<string>;
-    static readonly rightArm: Array<string>;
-    static readonly arms: Array<string>;
-    static readonly leftLeg: Array<string>;
-    static readonly rightLeg: Array<string>;
-    static readonly legs: Array<string>;
-    static readonly head: Array<string>;
-    static readonly body: Array<string>;
-    static readonly upperBody: Array<string>;
-    static readonly lowerBody: Array<string>;
+    static readonly leftArm: Iterable<string>;
+    static readonly rightArm: Iterable<string>;
+    static readonly arms: Iterable<string>;
+    static readonly leftLeg: Iterable<string>;
+    static readonly rightLeg: Iterable<string>;
+    static readonly legs: Iterable<string>;
+    static readonly head: Iterable<string>;
+    static readonly body: Iterable<string>;
+    static readonly upperBody: Iterable<string>;
+    static readonly lowerBody: Iterable<string>;
 }
 declare class PlaneConstraint extends Constraint {
 }
@@ -7987,7 +7987,6 @@ declare class AnimatedItem extends PhongItem {
         readonly morphTargets: Array<MorphTarget>;
         play(options: {
             readonly layer?: number;
-            readonly weight?: number;
             readonly name: string;
             readonly repeatCount?: number;
             readonly looping?: boolean;
@@ -7996,7 +7995,7 @@ declare class AnimatedItem extends PhongItem {
             readonly normalizedTime?: boolean;
             readonly pingpong?: boolean;
             readonly queued?: boolean;
-            readonly mask?: Array<string>;
+            readonly mask?: Iterable<string>;
         }): void;
         setLayerWeight(layer: number, weight: number): void;
         getLayerWeight(layer: number): number;
